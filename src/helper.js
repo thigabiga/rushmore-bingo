@@ -1,7 +1,7 @@
 import React from "react";
 import shuffle from "shuffle-array";
 
-// Return a random collection of 24 bingo squares
+// Return a random collection of 24 bingo squares, plus one free square
 export function resetGame() {
     const values = [
         "Overhead Shot", "Jason Schwartzman", "Wilson Brother", "BB Gun", "Absent Parent",
@@ -13,9 +13,7 @@ export function resetGame() {
 
     var squares = shuffle(values, {"picks": 24});
     squares = squares.slice(0, 12).concat(["Free"], squares.slice(12, 24));
-
     var status = Array(25).fill(0);
-    status[12] = 1
 
     return({
         "squares": squares,
@@ -23,6 +21,7 @@ export function resetGame() {
     });
 };
 
+// Calculate if you have a winning combination (down, across, or diagonal)
 export function calculateWinner(squares) {
     const lines = [
         [  0,  1,  2,  3,  4 ],
@@ -38,11 +37,12 @@ export function calculateWinner(squares) {
         [  0,  6, 12, 18, 24 ],
         [  4,  8, 12, 16, 20 ]
     ];
-    // for (let i = 0; i < lines.length; i++) {
-    //     const [a, b, c, d, e] = lines[i];
-    //     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-    //         return squares[a];
-    //     }
-    // }
+    for (let i = 0; i < lines.length; i++) {
+        const [a, b, c, d, e] = lines[i];
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c] && 
+            squares[a] === squares[d] && squares[a] === squares[e]) {
+            return squares[a];
+        }
+    }
     return null;
 }

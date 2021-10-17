@@ -4,26 +4,28 @@ import Square from "./Square";
 import { resetGame } from "../helper";
 import { calculateWinner } from "../helper";
 
+// Bingo game board
 export default class Board extends React.Component {
+
+    // Begin state with 25 squares
     constructor(props) {
         super(props);
         this.state = resetGame();
     }
     
+    // On click, set the square to filled status if not already
     handleClick(i) {
         const status = this.state.status.slice();
         if (status[i]) {
             return;
         }
-        // if (calculateWinner(squares) || squares[i]) {
-        //     return;
-        // }
         status[i] = 1;
         this.setState({
             status: status
         });
     }
     
+    // Square contains an index number value and a filled status
     renderSquare(i) {
         return (
             <Square 
@@ -35,17 +37,17 @@ export default class Board extends React.Component {
     }
   
     render() {
-        const winner = calculateWinner(this.state.squares);
-        let status;
+        const winner = calculateWinner(this.state.status);
+        let result;
         if (winner) {
-            status = "Winner: " + winner;
+            result = "Bingo!";
         } else {
-            status = "Keep playing!"
+            result = "Keep playing!"
         };
         
         return (
             <div>
-                <div className="status">{status}</div>
+                <p className="status">{result}</p>
                 <div className="board-row">
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}

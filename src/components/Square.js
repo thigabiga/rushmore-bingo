@@ -3,21 +3,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export default function Square(props) {
 
+    // If the square is filled, add the token marker
     if (props.status) {
         return (
-            <button class="square" onClick={props.onClick} data={props.status}>
-                <div class="token">
+            <button className="square" onClick={props.onClick} data={props.status}>
+                <div className="token">
                     X
                 </div>
-                <div class="content">
+                <div className="content">
                     {props.value}
                 </div>
             </button>
         );
+    // Otherwise, return a square without the token
     } else {
         return (
-            <button class="square" onClick={props.onClick} data={props.status}>
-                <div class="content">
+            <button className="square" onClick={props.onClick} data={props.status}>
+                <div className="content">
                     {props.value}
                 </div>
             </button>
