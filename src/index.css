@@ -2,6 +2,7 @@
 
 body {
     font-family: Nunito, sans-serif;
+    font-size: 12pt;
 }
 
 .square {
@@ -22,8 +23,20 @@ body {
     padding: 0;
     text-transform: uppercase;
     overflow-wrap: break-word;
+    font-family: Nunito, sans-serif;
+    font-size: 8pt;
+    text-align: center;
 }
 
 .token {
     color: blue;
+    position: absolute;
+    height: 80%; /* = 100% - 2*10% padding */
+    width: 90%; /* = 100% - 2*5% padding */
+    padding: 0;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+    font-family: Nunito, sans-serif;
+    font-size: 8pt;
+    text-align: center;
 }
