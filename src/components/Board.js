@@ -17,12 +17,16 @@ export default class Board extends React.Component {
     handleClick(i) {
         const status = this.state.status.slice();
         if (status[i]) {
-            return;
-        }
-        status[i] = 1;
-        this.setState({
-            status: status
-        });
+            status[i] = 0;
+            this.setState({
+                status: status
+            })
+        } else {
+            status[i] = 1;
+            this.setState({
+                status: status
+            })
+        };
     }
     
     // Square contains an index number value and a filled status
