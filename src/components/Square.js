@@ -25,9 +25,7 @@ export default function Square(props) {
                 <div className="content">
                     {props.value}
                 </div>
-                <div className="icon">
-                    <img className="icon" src={props.image} alt={props.value} />
-                </div>
+                <img className="icon" src={props.image} alt={props.value} />
             </button>
         );
     };

@@ -42,8 +42,7 @@ body {
 }
 
 .icon {
+    max-width: 100%;
+    display: block;
     position: absolute;
-    height: 100%; /* = 100% - 2*10% padding */
-    width: 100%; /* = 100% - 2*5% padding */
-    padding: 0; 
 }
