@@ -31,6 +31,7 @@ export default class Board extends React.Component {
             <Square 
                 value={this.state.squares[i]} 
                 status={this.state.status[i]}
+                image={this.state.images[i]}
                 onClick={() => this.handleClick(i)}
             />
         )

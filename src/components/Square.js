@@ -13,6 +13,9 @@ export default function Square(props) {
                 <div className="content">
                     {props.value}
                 </div>
+                <div className="icon">
+                    <img className="icon" src={props.image} alt={props.value} />
+                </div>
             </button>
         );
     // Otherwise, return a square without the token
@@ -21,6 +24,9 @@ export default function Square(props) {
             <button className="square" onClick={props.onClick} data={props.status}>
                 <div className="content">
                     {props.value}
+                </div>
+                <div className="icon">
+                    <img className="icon" src={props.image} alt={props.value} />
                 </div>
             </button>
         );

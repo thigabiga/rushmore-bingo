@@ -17,7 +17,8 @@ export function resetGame() {
         return(e["name"])
     })
     var images = shuffledData.map(e => {
-        return(e["image"])
+        let imgURL = "/images/" + e["image"]
+        return(imgURL)
     })
     var status = Array(25).fill(0);
 

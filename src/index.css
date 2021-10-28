@@ -18,7 +18,7 @@ body {
 
 .content {
     position: absolute;
-    height: 80%; /* = 100% - 2*10% padding */
+    height: 90%; /* = 100% - 2*10% padding */
     width: 90%; /* = 100% - 2*5% padding */
     padding: 0;
     text-transform: uppercase;
@@ -31,7 +31,7 @@ body {
 .token {
     color: blue;
     position: absolute;
-    height: 80%; /* = 100% - 2*10% padding */
+    height: 90%; /* = 100% - 2*10% padding */
     width: 90%; /* = 100% - 2*5% padding */
     padding: 0;
     text-transform: uppercase;
@@ -39,4 +39,11 @@ body {
     font-family: Nunito, sans-serif;
     font-size: 8pt;
     text-align: center;
+}
+
+.icon {
+    position: absolute;
+    height: 100%; /* = 100% - 2*10% padding */
+    width: 100%; /* = 100% - 2*5% padding */
+    padding: 0; 
 }
