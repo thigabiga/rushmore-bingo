@@ -21,20 +21,6 @@ export function resetGame() {
     })
     var status = Array(25).fill(0);
 
-
-    // const values = [
-    //     "Overhead Shot", "Jason Schwartzman", "Wilson Brother", "BB Gun", "Absent Parent",
-    //     "Whip Pan", "Bow Tie", "Slow Zoom", "Quick Zoom", "Tape Recorder", "Peanuts Homage",
-    //     "Quirky Vehicle", "Brit Pop", "Slow Motion", "Runs Away", "Pajama Set", "Bath Robe",
-    //     "Nose Injury", "Hand-Written Letter", "Symmetrical Frame", "Unrequited Love", 
-    //     "Typewriter", "Beret", "Lamar H.S.", "Futura Typeface", "Hipster Glasses", "Binoculars",
-    //     "Vinyl Record"
-    // ]
-
-    // var squares = shuffle(values, {"picks": 24});
-    // squares = squares.slice(0, 12).concat(["Free"], squares.slice(12, 24));
-    // var status = Array(25).fill(0);
-
     return({
         "squares": squares,
         "status": status,
