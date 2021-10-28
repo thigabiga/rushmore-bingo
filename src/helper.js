@@ -1,23 +1,44 @@
 import React from "react";
 import shuffle from "shuffle-array";
+import { dataSet } from "./data/Data";
 
 // Return a random collection of 24 bingo squares, plus one free square
 export function resetGame() {
-    const values = [
-        "Overhead Shot", "Jason Schwartzman", "Wilson Brother", "BB Gun", "Absent Parent",
-        "Whip Pan", "Bow Tie", "Slow Zoom", "Quick Zoom", "Tape Recorder", "Peanuts Homage",
-        "Quirky Vehicle", "Brit Pop", "Slow Motion", "Runs Away", "Pajama Set", "Bath Robe",
-        "Nose Injury", "Hand-Written Letter", "Symmetrical Frame", "Unrequited Love", 
-        "Typewriter", "Beret", "Lamar H.S.", "Futura Typeface", "Hipster Glasses", "Binoculars"
-    ]
 
-    var squares = shuffle(values, {"picks": 24});
-    squares = squares.slice(0, 12).concat(["Free"], squares.slice(12, 24));
+    // Import token names and images
+    const data = dataSet()
+
+    // Shuffle the data and add a free square
+    var shuffledData = shuffle(data["images"]["rushmore"], {"picks": 24})
+    var freeSquare = data["images"]["free"][0]
+    shuffledData = shuffledData.slice(0, 12).concat(freeSquare, shuffledData.slice(12, 24));
+
+    var squares = shuffledData.map(e => {
+        return(e["name"])
+    })
+    var images = shuffledData.map(e => {
+        return(e["image"])
+    })
     var status = Array(25).fill(0);
+
+
+    // const values = [
+    //     "Overhead Shot", "Jason Schwartzman", "Wilson Brother", "BB Gun", "Absent Parent",
+    //     "Whip Pan", "Bow Tie", "Slow Zoom", "Quick Zoom", "Tape Recorder", "Peanuts Homage",
+    //     "Quirky Vehicle", "Brit Pop", "Slow Motion", "Runs Away", "Pajama Set", "Bath Robe",
+    //     "Nose Injury", "Hand-Written Letter", "Symmetrical Frame", "Unrequited Love", 
+    //     "Typewriter", "Beret", "Lamar H.S.", "Futura Typeface", "Hipster Glasses", "Binoculars",
+    //     "Vinyl Record"
+    // ]
+
+    // var squares = shuffle(values, {"picks": 24});
+    // squares = squares.slice(0, 12).concat(["Free"], squares.slice(12, 24));
+    // var status = Array(25).fill(0);
 
     return({
         "squares": squares,
-        "status": status
+        "status": status,
+        "images": images
     });
 };
 
